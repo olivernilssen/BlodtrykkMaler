@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BlodtrykkMaler.Views.AddPage">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+            <Grid Padding="40" RowSpacing="30">
+                <Editor x:Name="SystolicEntry"
+                        Grid.Row="0" 
+                        Placeholder="Overtrykk"
+                        HeightRequest="40"
+                        Keyboard="Numeric"/>
+  
+                <Editor x:Name="DiastolicEntry"  
+                        Grid.Row="2" 
+                        Placeholder="Undertrykk"
+                        HeightRequest="40"
+                        Keyboard="Numeric"
+                    />
+            </Grid>
+            <Grid Padding="40, 0, 40, 40">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Button Text="Lagre"
+                    Clicked="OnSaveButtonClicked" />
+                <Button Grid.Column="1"
+                    Text="Tøm"
+                    Clicked="OnClearButtonClicked"/>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

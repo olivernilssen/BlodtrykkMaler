@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BlodtrykkMaler.MainPage"     
+             xmlns:local="clr-namespace:BlodtrykkMaler.Views"
+             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+             android:TabbedPage.ToolbarPlacement="Bottom"
+             android:TabbedPage.IsSwipePagingEnabled="True">
+
+    <local:StartPage Title="Startside"></local:StartPage>
+    <local:AddPage Title="Ny Måling"></local:AddPage>
+    <local:ListPage Title="Målinger"></local:ListPage>
+    <local:GraphPage Title="Graf"></local:GraphPage>
+
+</TabbedPage>
