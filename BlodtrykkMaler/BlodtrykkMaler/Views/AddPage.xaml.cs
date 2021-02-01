@@ -29,8 +29,8 @@ namespace BlodtrykkMaler.Views
             {
                 await App.Database.SaveMeasurmentAsync(new Measurement
                 {
-                    Systolic = SystolicEntry.Text,
-                    Diastolic = DiastolicEntry.Text,
+                    Systolic = int.Parse(SystolicEntry.Text),
+                    Diastolic = int.Parse(DiastolicEntry.Text),
                     Date = DateTime.Now.Date,
                     DateString = DateTime.Now.ToString("MM/dd/yy")
                 }); ;

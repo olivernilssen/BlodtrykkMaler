@@ -4,10 +4,11 @@
              x:Class="BlodtrykkMaler.App">
     <Application.Resources>
         <ResourceDictionary>
-            <Color x:Key="Background">White</Color>
-            <Color x:Key="ButtonPrimary">#30475e</Color>
-            <Color x:Key="ButtonSecondary">#f05454</Color>
-            <Color x:Key="SecondaryMain">#222831</Color>
+            <Color x:Key="BackgroundColor">#3d405b</Color>
+            <Color x:Key="ButtonPrimary">#e07a5f</Color>
+            <Color x:Key="ButtonSecondary">#81b29a</Color>
+            <Color x:Key="SeconadryText">#f2cc8f</Color>
+            <Color x:Key="PrimaryText">#f4f1de</Color>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

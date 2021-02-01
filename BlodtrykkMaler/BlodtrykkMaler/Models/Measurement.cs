@@ -7,8 +7,8 @@ namespace BlodtrykkMaler.Models
     {
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
-        public string Systolic { get; set; }
-        public string Diastolic { get; set; }
+        public int Systolic { get; set; }
+        public int Diastolic { get; set; }
         public DateTime Date { get; set; }
         public string DateString { get; set; }
     }
