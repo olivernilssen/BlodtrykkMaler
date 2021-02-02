@@ -9,6 +9,14 @@
             <Color x:Key="ButtonSecondary">#81b29a</Color>
             <Color x:Key="SeconadryText">#f2cc8f</Color>
             <Color x:Key="PrimaryText">#f4f1de</Color>
+            <Color x:Key="PlaceHolderColor">#8286ab</Color>
+
+            <x:String x:Key="Home">&#xf015;</x:String>
+            <x:String x:Key="Plus">&#xf067;</x:String>
+            <x:String x:Key="Hearbeat">&#xf21e;</x:String>
+            <x:String x:Key="ListOl">&#xf0cb;</x:String>
+            <x:String x:Key="Trash">&#xf1f8;</x:String>
+            
         </ResourceDictionary>
     </Application.Resources>
 </Application>

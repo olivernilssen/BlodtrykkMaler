@@ -17,7 +17,8 @@
                      HorizontalOptions="Center">
             
             <Label Text="Tidligere registrerte målinger"
-                   FontSize="20"
+                   FontSize="Large"
+                   TextColor="{DynamicResource PrimaryText}"
                    VerticalOptions="Center" 
                    HorizontalOptions="Center" 
                    Margin="0, 0, 0, 40"/>
@@ -25,20 +26,25 @@
             <ListView x:Name="listView" 
                       RowHeight="60"
                       HasUnevenRows="True"
+                      ItemSelected="OnListItemSelected"
                       >
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
+                            <ViewCell.ContextActions>
+                                <MenuItem Text="Delete" Clicked="Delete_Clicked"></MenuItem>
+                                <MenuItem Text="Star" Clicked="Stared_Clicked"></MenuItem>
+                            </ViewCell.ContextActions>
                             <Frame 
                                 CornerRadius="10"  
                                 BackgroundColor="{Binding Converter={StaticResource ColorConverter}}"
                                 Margin="5"
                                 >
                                 <Grid Margin="5">
-                                    <Label Grid.Column="0" Text="{Binding Id}" FontSize="15" TextColor="White" FontAttributes="Bold" HorizontalOptions="StartAndExpand" />
-                                    <Label Grid.Column="1" Text="{Binding DateString}" FontSize="15" TextColor="White" FontAttributes="Bold" HorizontalOptions="StartAndExpand" />
-                                    <Label Grid.Column="2" Text="{Binding Systolic}" FontSize="15" TextColor="White" FontAttributes="Bold" HorizontalOptions="Center"/>
-                                    <Label Grid.Column="3" Text="{Binding Diastolic}" FontSize="15" TextColor="White" FontAttributes="Bold" HorizontalOptions="EndAndExpand"/>
+                                    <Label x:Name="ItemId" Grid.Column="0" Text="{Binding Id}" FontSize="15" TextColor="{DynamicResource PrimaryText}" FontAttributes="Bold" HorizontalOptions="StartAndExpand" />
+                                    <Label Grid.Column="1" Text="{Binding DateString}" FontSize="15" TextColor="{DynamicResource PrimaryText}" FontAttributes="Bold" HorizontalOptions="StartAndExpand" />
+                                    <Label Grid.Column="2" Text="{Binding Systolic}" FontSize="15" TextColor="{DynamicResource PrimaryText}" FontAttributes="Bold" HorizontalOptions="Center"/>
+                                    <Label Grid.Column="3" Text="{Binding Diastolic}" FontSize="15" TextColor="{DynamicResource PrimaryText}" FontAttributes="Bold" HorizontalOptions="EndAndExpand"/>
                                 </Grid>
                             </Frame>
                         </ViewCell>

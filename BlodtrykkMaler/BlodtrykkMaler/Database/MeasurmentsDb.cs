@@ -19,14 +19,19 @@ namespace BlodtrykkMaler.Database
             return _database.Table<Measurement>().ToListAsync();
         }
 
+        public Task<Measurement> GetMeasurementAsync(int id)
+        {
+            return _database.Table<Measurement>().Where(i => i.Id == id).FirstOrDefaultAsync();
+        }
+
         public Task<int> SaveMeasurmentAsync(Measurement measurement)
         {
             return _database.InsertAsync(measurement);
         }
 
-        public Task<int> DeleteMeasurementAsync(Measurement measurement)
+        public Task<int> DeleteMeasurementAsync(int id)
         {
-            return _database.DeleteAsync(measurement);
+            return _database.DeleteAsync<Measurement>(id);
         }
 
     }

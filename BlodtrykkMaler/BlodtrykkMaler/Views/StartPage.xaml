@@ -5,9 +5,11 @@
              BackgroundColor="{DynamicResource BackgroundColor}">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
+            <Label Text="Hei Bruker!"
                 VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+                HorizontalOptions="CenterAndExpand" 
+                TextColor="{DynamicResource PrimaryText}" />
+            <Image Source="bloodPressure.png" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

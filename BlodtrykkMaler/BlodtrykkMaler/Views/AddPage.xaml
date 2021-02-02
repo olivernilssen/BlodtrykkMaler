@@ -5,20 +5,28 @@
              BackgroundColor="{DynamicResource BackgroundColor}">
     <ContentPage.Content>
         <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="Fill" Padding="50">
-            <Label HorizontalOptions="Center" VerticalOptions="StartAndExpand" Text="Legg inn ny måling" FontSize="30" />
+            <Label HorizontalOptions="Center" 
+                   VerticalOptions="StartAndExpand" 
+                   Text="Legg inn ny måling" 
+                   TextColor="{DynamicResource PrimaryText}"
+                   FontSize="30" />
             
             <Grid Padding="10" RowSpacing="-5">
                 <Editor x:Name="SystolicEntry"
                         Grid.Row="0" 
                         Placeholder="Overtrykk"
                         HeightRequest="40"
-                        Keyboard="Numeric"/>
+                        Keyboard="Numeric"
+                        PlaceholderColor="{DynamicResource PlaceHolderColor}"
+                        TextColor="{DynamicResource PrimaryText}"/>
   
                 <Editor x:Name="DiastolicEntry"  
                         Grid.Row="2" 
                         Placeholder="Undertrykk"
                         HeightRequest="40"
                         Keyboard="Numeric"
+                        PlaceholderColor="{DynamicResource PlaceHolderColor}"
+                        TextColor="{DynamicResource PrimaryText}"
                     />
             </Grid>
             
@@ -27,12 +35,14 @@
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <Button Text="Legg til"
+                <Button Text="{StaticResource Plus}"
                         Clicked="OnSaveButtonClicked" 
                         BackgroundColor="#f05454"
-                        TextColor="White"/>
+                        TextColor="White"
+                        FontFamily="FA-S"/>
                 <Button Grid.Column="1"
-                        Text="Tøm Tekst"
+                        Text="{StaticResource Trash}"
+                        FontFamily="FA-S"
                         Clicked="OnClearButtonClicked"
                         BackgroundColor="#f05454"
                         TextColor="White"/>
