@@ -27,7 +27,7 @@ namespace BlodtrykkMaler.Database
             {
                 list = await _database.Table<Measurement>().ToListAsync();
             }
-            catch (SQLiteException e)
+            catch (SQLiteException)
             {
                 throw new ArgumentNullException ("Measurments was not loaded from database");
             }
@@ -48,7 +48,7 @@ namespace BlodtrykkMaler.Database
             {
                 list = await _database.Table<Measurement>().OrderBy(x => x.Date).ToListAsync();
             }
-            catch (SQLiteException e)
+            catch (SQLiteException)
             {
                 throw new ArgumentNullException("Measurments was not loaded from database");
             }
@@ -69,7 +69,7 @@ namespace BlodtrykkMaler.Database
             {
                 dbItem = await _database.Table<Measurement>().Where(i => i.Id == id).FirstOrDefaultAsync();
             }
-            catch (SQLiteException e)
+            catch (SQLiteException)
             {
                 throw new Exception("Measurement with id: " + id + " does not exist in database");
             }
@@ -90,7 +90,7 @@ namespace BlodtrykkMaler.Database
             {
                 newItemId = await _database.InsertAsync(measurement);
             }
-            catch (SQLiteException e)
+            catch (SQLiteException)
             {
                 throw new Exception("The measurment was not added to the database");
             }
@@ -110,7 +110,7 @@ namespace BlodtrykkMaler.Database
             {
                 wasDeleted = await _database.DeleteAsync<Measurement>(id);
             }
-            catch (SQLiteException e)
+            catch (SQLiteException)
             {
                 throw new Exception("The measurment with id: " + id + " was not deleted");
             }
