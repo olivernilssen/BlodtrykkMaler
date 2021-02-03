@@ -2,21 +2,41 @@
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BlodtrykkMaler.App">
+
+    <!--Creates a DynamicResources option in the other pages-->
     <Application.Resources>
         <ResourceDictionary>
+            <!--Defualt colors for application-->
             <Color x:Key="BackgroundColor">#3d405b</Color>
             <Color x:Key="ButtonPrimary">#e07a5f</Color>
-            <Color x:Key="ButtonSecondary">#81b29a</Color>
+            <Color x:Key="ButtonSecondary">#2a9d8f</Color>
+            <Color x:Key="ButtonDelete">#c33e3c</Color>
             <Color x:Key="SeconadryText">#f2cc8f</Color>
             <Color x:Key="PrimaryText">#f4f1de</Color>
             <Color x:Key="PlaceHolderColor">#8286ab</Color>
+            <Color x:Key="SystolicColor">#f8961e</Color>
+            <Color x:Key="DiastolicColor">#43aa8b</Color>
+            <Color x:Key="TabbarColor">#373a53</Color>
+            <Color x:Key="TabbarSelectedColor">#f1703c</Color>
 
+            <!--Colors for bloodpressure-->
+            <Color x:Key="PLow">#45afc8</Color>
+            <Color x:Key="PNormal">#64cab1</Color>
+            <Color x:Key="PHigh">#f1703c</Color>
+            <Color x:Key="PElevated">#f59c3e</Color>
+            <Color x:Key="PHigh2">#eb5d5c</Color>
+            <Color x:Key="PHyper">#ac3e3d</Color>
+
+            <!--Icons and their represented font value-->
             <x:String x:Key="Home">&#xf015;</x:String>
             <x:String x:Key="Plus">&#xf067;</x:String>
             <x:String x:Key="Hearbeat">&#xf21e;</x:String>
             <x:String x:Key="ListOl">&#xf0cb;</x:String>
             <x:String x:Key="Trash">&#xf1f8;</x:String>
-            
+            <x:String x:Key="Back">&#xf060;</x:String>
+            <x:String x:Key="Steto">&#xf0f1;</x:String>
+            <x:String x:Key="Chart">&#xf1fe;</x:String> 
+
         </ResourceDictionary>
     </Application.Resources>
 </Application>

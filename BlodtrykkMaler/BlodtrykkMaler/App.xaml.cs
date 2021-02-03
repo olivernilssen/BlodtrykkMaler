@@ -12,6 +12,7 @@ namespace BlodtrykkMaler
         static MeasurmentsDb database;
         public static MeasurmentsDb Database
         {
+            //initialize the databse when we start our application
             get
             {
                 if (database == null)
@@ -19,7 +20,6 @@ namespace BlodtrykkMaler
                     database = new MeasurmentsDb(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "measurments.db3"));
                 }
 
-                Debug.WriteLine("testing testing");
                 return database;
             }
         }
@@ -29,18 +29,6 @@ namespace BlodtrykkMaler
             InitializeComponent();
 
             MainPage = new MainPage();
-        }
-
-        protected override void OnStart()
-        {
-        }
-
-        protected override void OnSleep()
-        {
-        }
-
-        protected override void OnResume()
-        {
         }
     }
 }

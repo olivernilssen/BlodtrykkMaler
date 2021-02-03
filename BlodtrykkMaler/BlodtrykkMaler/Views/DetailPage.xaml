@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BlodtrykkMaler.Views.DetailPage"
+             xmlns:converters="clr-namespace:BlodtrykkMaler.Converters"
+             BackgroundColor="{DynamicResource BackgroundColor}">
+
+    <!--Set the content page title and icon-->
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:PressureTextConverter x:Key="textConverter" />
+            <converters:ItemColorConverter x:Key="colorConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <ContentPage.Content>
+        <StackLayout Padding="20" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+            <!--Grid that shows details of measurment-->
+            <Grid HorizontalOptions="CenterAndExpand">
+                <!--Label for "header"-->
+                <Label 
+                    Grid.Row="0"
+                    Grid.ColumnSpan="6"
+                    Text="Oversikt over måling"
+                    FontSize="30"
+                    HorizontalOptions="CenterAndExpand" 
+                    TextColor="{DynamicResource PrimaryText}"/>
+                
+                <!--Grid with Labels showing the date measurement was entered-->
+                <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="6" ColumnSpacing="5" HorizontalOptions="CenterAndExpand">
+                    <Label 
+                        Grid.Row="0" Grid.Column="0"
+                        FontSize="20"
+                        Text="Registrert:"
+                        HorizontalTextAlignment="Center"
+                        TextColor="{DynamicResource SeconadryText}"/>
+
+                    <Label 
+                        Grid.Row="0" Grid.Column="1"
+                        Text="{Binding DateString}"
+                        FontSize="20"
+                        HorizontalTextAlignment="Center" 
+                        TextColor="{DynamicResource SeconadryText}"/>
+                </Grid>
+
+                <!--A Frame showing our diastolic and systolic labels in a cirle-->
+                <Frame Grid.Row="4" Grid.RowSpan="4" 
+                       WidthRequest="110"
+                       CornerRadius="100"
+                       BackgroundColor="{Binding Converter={StaticResource colorConverter}}" 
+                       Grid.ColumnSpan="6" 
+                       HorizontalOptions="CenterAndExpand" 
+                       VerticalOptions="CenterAndExpand" >
+                    <StackLayout Spacing="0">
+                        <Label 
+                               HorizontalTextAlignment="Center"
+                               FontSize="40"
+                               Text="{Binding Systolic}"
+                               TextColor="{DynamicResource PrimaryText}"/>
+
+                        <Label 
+                               HorizontalTextAlignment="Center"
+                               FontSize="40"
+                               Text="{Binding Diastolic}"
+                               TextColor="{DynamicResource PrimaryText}"/>
+                    </StackLayout>
+                </Frame>
+
+                <!--Label showing text specific to values-->
+                <Label FontSize="20"
+                       Grid.Row="9"
+                       Grid.ColumnSpan="6"
+                       HorizontalOptions="FillAndExpand"
+                       HorizontalTextAlignment="Center"
+                       TextColor="{DynamicResource SeconadryText}" 
+                       Text="{Binding Converter={StaticResource textConverter}}"/>
+            </Grid>
+
+            <!--Grid showing two buttons at the bottom. Either to go back or to delete this measurement-->
+            <Grid VerticalOptions="EndAndExpand">
+                <Button 
+                    Grid.Row="0"
+                    Grid.ColumnSpan="2"
+                    Grid.Column="0"
+                    Text="Tilbake" 
+                    Clicked="OnDismissButtonClicked" 
+                    VerticalOptions="EndAndExpand"
+                    BackgroundColor="{DynamicResource ButtonSecondary}"
+                    TextColor="{DynamicResource PrimaryText}"
+                    />
+                <Button 
+                    Grid.Row="0"
+                    Grid.Column="4"
+                    Text="Slett" 
+                    VerticalOptions="EndAndExpand"
+                    Pressed="onDeleteButtonClickedAsync"
+                    BackgroundColor="{DynamicResource ButtonDelete}"
+                    TextColor="{DynamicResource PrimaryText}"
+                    />
+            </Grid>
+            
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

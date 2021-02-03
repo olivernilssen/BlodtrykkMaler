@@ -2,14 +2,53 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BlodtrykkMaler.Views.StartPage"
-             BackgroundColor="{DynamicResource BackgroundColor}">
+             BackgroundColor="{DynamicResource BackgroundColor}"
+             >
+    <!--Set the content page title and icon-->
+    <ContentPage.Title>Hjem</ContentPage.Title>
+    <ContentPage.IconImageSource>
+        <FontImageSource
+            FontFamily="FA-S"
+            Glyph="{DynamicResource Home}"
+            Size="200"
+            Color="{DynamicResource PrimaryText}" />
+    </ContentPage.IconImageSource>
+    
+    
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout Padding="30">
+            <!--Header Label-->
             <Label Text="Hei Bruker!"
+                   FontSize="62"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" 
+                TextColor="{DynamicResource PrimaryText}" />
+
+            <!--Image shown on screen when user logsstarts application-->
+            <Image
+                HeightRequest="200"
+                WidthRequest="200"
+                Margin="40"
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="CenterAndExpand">
+                <Image.Source>
+                    <FontImageSource
+                        x:Name="heartImage"
+                        FontFamily="FA-S"
+                        Size="200"
+                        Glyph="{DynamicResource Hearbeat}"
+                        Color="{DynamicResource PHigh2}" />
+                </Image.Source>
+            </Image>
+
+            <!--Information Label-->
+            <Label Text="Du kan lett navigere deg på appen, enten ved å bruke menyen på bunnen av skjermen, eller ved å dra skjermen til høyre eller venstre.!"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" 
+                   FontSize="15"
                 TextColor="{DynamicResource PrimaryText}" />
-            <Image Source="bloodPressure.png" />
+
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

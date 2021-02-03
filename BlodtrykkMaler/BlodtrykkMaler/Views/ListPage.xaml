@@ -3,8 +3,19 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:converters="clr-namespace:BlodtrykkMaler.Converters"
              x:Class="BlodtrykkMaler.Views.ListPage"
-             BackgroundColor="{DynamicResource BackgroundColor}">
+             BackgroundColor="{StaticResource BackgroundColor}">
 
+    <!--Set the content page title and icon-->
+    <ContentPage.Title>Målinger</ContentPage.Title>
+    <ContentPage.IconImageSource>
+        <FontImageSource
+            FontFamily="FA-S"
+            Glyph="{DynamicResource ListOl}"
+            Size="200"
+            Color="{DynamicResource PrimaryText}" />
+    </ContentPage.IconImageSource>
+
+    <!--Set the content refrences (Here we set the converter for colors)-->
     <ContentPage.Resources>
         <ResourceDictionary>
             <converters:ItemColorConverter x:Key="ColorConverter" />
@@ -15,36 +26,48 @@
         <StackLayout Padding="10, 40, 10, 40"
                      VerticalOptions="Center"
                      HorizontalOptions="Center">
-            
+
+            <!--"Header" label-->
             <Label Text="Tidligere registrerte målinger"
-                   FontSize="Large"
-                   TextColor="{DynamicResource PrimaryText}"
+                   FontSize="25"
+                   TextColor="{StaticResource PrimaryText}"
+                   VerticalOptions="Center" 
+                   HorizontalOptions="Center" 
+                   Margin="0, 0, 0, 10"/>
+            
+            <!--Details for page label-->
+            <Label Text="Trykk på en måling for å se detaljer"
+                   FontSize="Small"
+                   TextColor="{StaticResource PrimaryText}"
                    VerticalOptions="Center" 
                    HorizontalOptions="Center" 
                    Margin="0, 0, 0, 40"/>
 
+            <!--Listview that lists all our measurements from the database-->
             <ListView x:Name="listView" 
                       RowHeight="60"
                       HasUnevenRows="True"
-                      ItemSelected="OnListItemSelected"
+                      ItemTapped="OnListItemTapped"
+                      HorizontalScrollBarVisibility="Always"
                       >
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <ViewCell.ContextActions>
-                                <MenuItem Text="Delete" Clicked="Delete_Clicked"></MenuItem>
-                                <MenuItem Text="Star" Clicked="Stared_Clicked"></MenuItem>
-                            </ViewCell.ContextActions>
+                            <!--Frame it so that is can have rounded corners and specific colours-->
                             <Frame 
                                 CornerRadius="10"  
                                 BackgroundColor="{Binding Converter={StaticResource ColorConverter}}"
                                 Margin="5"
                                 >
-                                <Grid Margin="5">
-                                    <Label x:Name="ItemId" Grid.Column="0" Text="{Binding Id}" FontSize="15" TextColor="{DynamicResource PrimaryText}" FontAttributes="Bold" HorizontalOptions="StartAndExpand" />
-                                    <Label Grid.Column="1" Text="{Binding DateString}" FontSize="15" TextColor="{DynamicResource PrimaryText}" FontAttributes="Bold" HorizontalOptions="StartAndExpand" />
-                                    <Label Grid.Column="2" Text="{Binding Systolic}" FontSize="15" TextColor="{DynamicResource PrimaryText}" FontAttributes="Bold" HorizontalOptions="Center"/>
-                                    <Label Grid.Column="3" Text="{Binding Diastolic}" FontSize="15" TextColor="{DynamicResource PrimaryText}" FontAttributes="Bold" HorizontalOptions="EndAndExpand"/>
+                                <!--Grid with all the different info from a Measurement Model-->
+                                <Grid Margin="0">
+                                    <Label x:Name="ItemId" Grid.Column="0" Text="{Binding Id}" FontSize="15" TextColor="{DynamicResource PrimaryText}" FontAttributes="Bold" HorizontalOptions="Start" />
+                                    <Label Grid.Column="1" Grid.ColumnSpan="2" Text="{Binding DateString}" FontSize="15" TextColor="{DynamicResource PrimaryText}" FontAttributes="Bold" HorizontalOptions="Start" />
+                                    <Grid Grid.Column="3" Grid.ColumnSpan="2">
+                                        <Label Grid.Column="0" Text="{Binding Systolic}" FontSize="15" TextColor="{DynamicResource PrimaryText}" FontAttributes="Bold" HorizontalOptions="End"/>
+                                        <Label Grid.Column="1" Text="/" FontSize="15" TextColor="{DynamicResource PrimaryText}" FontAttributes="Bold" HorizontalOptions="Center"/>
+                                        <Label Grid.Column="2" Text="{Binding Diastolic}" FontSize="15" TextColor="{DynamicResource PrimaryText}" FontAttributes="Bold" HorizontalOptions="Start"/>
+                                    </Grid>
                                 </Grid>
                             </Frame>
                         </ViewCell>

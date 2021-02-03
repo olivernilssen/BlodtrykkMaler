@@ -15,41 +15,29 @@ namespace BlodtrykkMaler.Views
             InitializeComponent();
         }
 
+        /// <summary>
+        /// When the view/page appears, load the Measurments from database
+        /// </summary>
         protected override async void OnAppearing()
         {
             base.OnAppearing();
-            listView.ItemsSource = await App.Database.GetMeasurementsAsync();
+            listView.ItemsSource = await App.Database.GetMeasurementsByDateAsync();
 
         }
 
-        private void Stared_Clicked(object sender, System.EventArgs e)
+        /// <summary>
+        /// On list item tapped. Push modal with a new detail screen specific for this measurement
+        /// </summary>
+        private async void OnListItemTapped(object sender, ItemTappedEventArgs e)
         {
-            // to come
-        }
-        private async void Delete_Clicked(object sender, System.EventArgs e)
-        {
-            var item = (Measurement)BindingContext;
-
-            if (item == null)
+            //Only do this is there are details inside the item tapped
+            if (e.Item != null)
             {
-                await DisplayAlert("Error", "Målingen ble ikke slettet, kontakt admin", "ok");
-            }
-            else
-            {
-                int result = await App.Database.DeleteMeasurementAsync(item.Id);
-                await DisplayAlert("Error", message: "Målingen" + item.Id + " ble slettet", "ok");
-                listView.ItemsSource = await App.Database.GetMeasurementsAsync();
-            }
-
-        }
-
-        private void OnListItemSelected(object sender, SelectedItemChangedEventArgs e)
-        {
-            if (e.SelectedItem != null)
-            {
-                BindingContext = e.SelectedItem as Measurement;
+                var detailPage = new DetailPage();
+                detailPage.BindingContext = e.Item as Measurement;
+                listView.SelectedItem = null;
+                await Navigation.PushModalAsync(detailPage);
             }
         }
-
     }
 }

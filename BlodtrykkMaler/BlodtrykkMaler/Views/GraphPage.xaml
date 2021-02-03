@@ -2,12 +2,74 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BlodtrykkMaler.Views.GraphPage"
+             xmlns:forms="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
+             xmlns:local="clr-namespace:BlodtrykkMaler.Charts"
              BackgroundColor="{DynamicResource BackgroundColor}">
+    <!--Set the content page title and icon-->
+    <ContentPage.Title>Graf</ContentPage.Title>
+    <ContentPage.IconImageSource>
+        <FontImageSource
+            FontFamily="FA-S"
+            Glyph="{DynamicResource Chart}"
+            Size="200"
+            Color="{DynamicResource PrimaryText}" />
+    </ContentPage.IconImageSource>
+
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="This page will contain info about a graph"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout HorizontalOptions="Fill" VerticalOptions="Fill" Padding="20">
+            <!--"Header" Label-->
+            <Label Text="Din Graf"
+                   VerticalOptions="Start" 
+                   HorizontalOptions="Center"
+                   FontSize="50"
+                   TextColor="{DynamicResource PrimaryText}"/>
+
+            <!--Info label with info about this page-->
+            <Label Text="Her ser vi en graf over alle tidligere målinger. Du kan se under hvilke farge som tilhører overtrykk eller understrykk"
+                   Padding="10"
+                   VerticalOptions="Center" 
+                   HorizontalTextAlignment="Center"
+                   FontSize="16"
+                   HeightRequest="90"
+                   TextColor="{DynamicResource PrimaryText}"
+                   />
+
+            <!--A grid showing 2 charts on top of eachother so it looks like a double line chart-->
+            <Grid>
+                <forms:ChartView x:Name="DiastolicChart"
+                                 HeightRequest="700"
+                                 Grid.Row="1"
+                                 Grid.Column="0"
+                                 Grid.ColumnSpan="4"
+                                 />
+                
+                <forms:ChartView x:Name="SystolicChart"  
+                                 HeightRequest="700"
+                                 Grid.Row="1"
+                                 Grid.Column="0"
+                                 Grid.ColumnSpan="4"
+                                 />
+
+                <!--Labels under the chart showing which line belongs to which measurement-->
+                <Label Grid.Row="2" 
+                       Grid.Column="0"
+                       Grid.ColumnSpan="2" 
+                       Margin="0, -20, 0, 0"
+                       Text="Overtrykk"
+                       HorizontalOptions="Center"
+                       FontAttributes="Bold"
+                       FontSize="20"
+                       TextColor="{DynamicResource SystolicColor}"/>
+                <Label Grid.Row="2" 
+                       Grid.Column="2"
+                       Grid.ColumnSpan="2" 
+                       Margin="0, -20, 0, 0"
+                       Text="Understykk"
+                       HorizontalOptions="Center"
+                       FontAttributes="Bold"
+                       FontSize="20"
+                       TextColor="{DynamicResource DiastolicColor}"/>
+            </Grid>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

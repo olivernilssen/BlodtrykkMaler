@@ -5,9 +5,7 @@ VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlodtrykkMaler.Android", "BlodtrykkMaler\BlodtrykkMaler.Android\BlodtrykkMaler.Android.csproj", "{5D9D1D7C-580F-42D1-8B85-38D3DA40C1DA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlodtrykkMaler.iOS", "BlodtrykkMaler\BlodtrykkMaler.iOS\BlodtrykkMaler.iOS.csproj", "{F9A5B2DF-8429-4B59-83FF-557C0CC87795}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlodtrykkMaler", "BlodtrykkMaler\BlodtrykkMaler\BlodtrykkMaler.csproj", "{B384A4FD-0F68-4419-AB46-7EFBF68EF2DE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlodtrykkMaler", "BlodtrykkMaler\BlodtrykkMaler\BlodtrykkMaler.csproj", "{B384A4FD-0F68-4419-AB46-7EFBF68EF2DE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,24 +35,6 @@ Global
 		{5D9D1D7C-580F-42D1-8B85-38D3DA40C1DA}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
 		{5D9D1D7C-580F-42D1-8B85-38D3DA40C1DA}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 		{5D9D1D7C-580F-42D1-8B85-38D3DA40C1DA}.Release|iPhoneSimulator.Deploy.0 = Release|Any CPU
-		{F9A5B2DF-8429-4B59-83FF-557C0CC87795}.Debug|Any CPU.ActiveCfg = Debug|iPhone
-		{F9A5B2DF-8429-4B59-83FF-557C0CC87795}.Debug|Any CPU.Build.0 = Debug|iPhone
-		{F9A5B2DF-8429-4B59-83FF-557C0CC87795}.Debug|Any CPU.Deploy.0 = Debug|iPhone
-		{F9A5B2DF-8429-4B59-83FF-557C0CC87795}.Debug|iPhone.ActiveCfg = Debug|iPhone
-		{F9A5B2DF-8429-4B59-83FF-557C0CC87795}.Debug|iPhone.Build.0 = Debug|iPhone
-		{F9A5B2DF-8429-4B59-83FF-557C0CC87795}.Debug|iPhone.Deploy.0 = Debug|iPhone
-		{F9A5B2DF-8429-4B59-83FF-557C0CC87795}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
-		{F9A5B2DF-8429-4B59-83FF-557C0CC87795}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
-		{F9A5B2DF-8429-4B59-83FF-557C0CC87795}.Debug|iPhoneSimulator.Deploy.0 = Debug|iPhoneSimulator
-		{F9A5B2DF-8429-4B59-83FF-557C0CC87795}.Release|Any CPU.ActiveCfg = Release|iPhoneSimulator
-		{F9A5B2DF-8429-4B59-83FF-557C0CC87795}.Release|Any CPU.Build.0 = Release|iPhoneSimulator
-		{F9A5B2DF-8429-4B59-83FF-557C0CC87795}.Release|Any CPU.Deploy.0 = Release|iPhoneSimulator
-		{F9A5B2DF-8429-4B59-83FF-557C0CC87795}.Release|iPhone.ActiveCfg = Release|iPhone
-		{F9A5B2DF-8429-4B59-83FF-557C0CC87795}.Release|iPhone.Build.0 = Release|iPhone
-		{F9A5B2DF-8429-4B59-83FF-557C0CC87795}.Release|iPhone.Deploy.0 = Release|iPhone
-		{F9A5B2DF-8429-4B59-83FF-557C0CC87795}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
-		{F9A5B2DF-8429-4B59-83FF-557C0CC87795}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
-		{F9A5B2DF-8429-4B59-83FF-557C0CC87795}.Release|iPhoneSimulator.Deploy.0 = Release|iPhoneSimulator
 		{B384A4FD-0F68-4419-AB46-7EFBF68EF2DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B384A4FD-0F68-4419-AB46-7EFBF68EF2DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B384A4FD-0F68-4419-AB46-7EFBF68EF2DE}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
